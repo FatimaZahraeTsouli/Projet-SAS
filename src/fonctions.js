@@ -1,119 +1,80 @@
-function normaliserNom(nom){
-    nom=nom.trim().toLowerCase()
-    return nom
-}
-console.log(normaliserNom("  FaTima   "))
-// export{normaliserNom}
+//  ************fonction normalisernom: done*****************
+
+// import { apprenants } from './data.js'
+// export function normaliserNom(apprenant){
+//   return apprenants.map(function(apprenant){
+//     return apprenant.nom = apprenant.nomComplet.trim().toLowerCase()
+//     })
+// }
+// normaliserNom()
 
 
+// *****Fonction validerResultat: undone*******
 
-
-
-function validerResultat(resultats){
-    if (resultats.jour <0 || resultats.jour >7){
-        return false
-    } if (resultats.totalExercices !== 20){
-         return false
- }
- if  (resultats.exercicesTermines > resultats.totalExercices){
-     const totalExercices = 20
-    return false                                              
- } 
- if (typeof resultats.challengeTermine !== "boolean"){
-    return false
- } 
- return true
-
-}
-console.log(validerResultat(
-      { jour: 1, exercicesTermines: 12,
-        totalExercices: 20, challengeTermine: false }
-    ))
-    // export{validerResultat}
-
-
-
-
-
-const apprenants=[
-  {
-    id: 1,
-    nomComplet: "Sara Dev",
-    ville: "Nador",
-    resultats: [
-      { jour: 1, exercicesTermines: 18,
-        totalExercices: 20, challengeTermine: true },
-      { jour: 2, exercicesTermines: 14,
-        totalExercices: 20, challengeTermine: false }
-    ]
-  },
-  {
-    id: 2,
-    nomComplet: "Yassine Code",
-    ville: "Oujda",
-    resultats: [
-      { jour: 1, exercicesTermines: 12,
-        totalExercices: 20, challengeTermine: false }
-    ]
-  },
-  {
-    id: 3,
-    nomComplet: "fatima zahrae",
-    ville: "nador",
-    resultats: [
-        {jour:1, exercicesTermines:16,
-            totalExercices:20, challengeTermine: true
+import { apprenants } from './data.js'
+export function validerResultat() {
+    return apprenants.map(function (apprenants) {
+        return apprenants.resultats.map(function(resultats){
+        if (resultats.jour >= 0 && resultats.jour <= 7) {
+            return true
+        } if (resultats.totalExercices == 20) {
+            return true
         }
+        if (resultats.exercicesTermines < resultats.totalExercices && resultats.exercicesTermines >=0 ) {
+            const totalExercices = 20
+            return true
+        }
+        if (typeof resultats.challengeTermine == "boolean") {
+            return true
+        }
+        return false
     
-    ]
-}
-];
-function ajouterApprenant(nouveauApprenant){
-    for (let i=0; i<apprenants.length; i++){
-    if(apprenants[i].id === nouveauApprenant.id){
-        return("apprenant deja existe")
-    }}
-        apprenants.push(nouveauApprenant)
-        return ("ajouter avec succées")
-}
-console.log(ajouterApprenant({
-    id: 3,
-    nomComplet: "fatima zahrae",
-    ville: "nador",
-    resultats: [
-        {jour:1, exercicesTermines:16,
-            totalExercices:20, challengeTermine: true}]
-        }))
+    })})}
+console.log(validerResultat())
+
+
+
+
+// *****************fonction ajouterapprenant: done*****************
+
+//   import { apprenants } from './data.js'
+// export function ajouterApprenant(nouveauApprenant){
+//     for (let i=0; i<apprenants.length; i++){
+//     if(apprenants[i].id === nouveauApprenant.id){
+//         return("apprenant deja existe")
+//     }}
+//         apprenants.push(nouveauApprenant)
+//         return ("ajouter avec succées")
+// }
+//(ajouterApprenant())
 
 
 
 
 
-
-
-function enregistrerResultat(){
+function enregistrerResultat() {
 
 }
 
-function rechercherApprenant(apprenant){
+function rechercherApprenant() {
 
 
 }
-rechercherApprenant("id=1")
+rechercherApprenant()
 
-function calculerProgression(apprenants){
-
-}
-console.log(calculerProgression())
-
-function filtrerParNiveau(){
+function calculerProgression() {
 
 }
+calculerProgression()
 
-function trierParProgression(){
+function filtrerParNiveau() {
 
 }
 
-function afficherTableauDeBord(){
+function trierParProgression() {
+
+}
+
+function afficherTableauDeBord() {
 
 }

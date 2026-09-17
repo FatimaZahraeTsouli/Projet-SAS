@@ -1,4 +1,4 @@
-const apprenants = [
+export const apprenants = [
   {
     id: 1,
     nomComplet: "Sara Dev",
@@ -7,7 +7,7 @@ const apprenants = [
       { jour: 1, exercicesTermines: 18,
         totalExercices: 20, challengeTermine: true },
       { jour: 2, exercicesTermines: 14,
-        totalExercices: 20, challengeTermine: false }
+        totalExercices: 25, challengeTermine: false }
     ]
   },
   {
@@ -21,7 +21,7 @@ const apprenants = [
   },
   {
     id: 3,
-    nomComplet: "fatima zahrae",
+    nomComplet: "Fatima Zahrae",
     ville: "nador",
     resultats: [
         {jour:1, exercicesTermines:16,
@@ -31,4 +31,3 @@ const apprenants = [
     ]
 }
 ];
-console.log(apprenants)
