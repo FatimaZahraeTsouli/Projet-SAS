@@ -7,7 +7,7 @@ export const apprenants = [
       { jour: 1, exercicesTermines: 18,
         totalExercices: 20, challengeTermine: true },
       { jour: 2, exercicesTermines: 14,
-        totalExercices: 25, challengeTermine: false }
+        totalExercices: 20, challengeTermine: false }
     ]
   },
   {
