@@ -220,10 +220,119 @@ export function trierParProgression() {
 }
 
 
+// ******************************8.classer par niveau  done  **************************************
+export function classerParNiveau() {
+     const NiveauSolide=[]
+    const NiveauEnProgression=[]
+    const NiveauARenforcer=[]
+    const resultatsProgression = calculerProgression(apprenants)
+    for (let i=0; i<apprenants.length; i++){
+        const progression = Number(resultatsProgression[i].progression.replace(" %", ""))
+        if( progression >= 80 ){
+            NiveauSolide.push(resultatsProgression[i])
+        } else if (progression >= 50 && progression < 80){
+            NiveauEnProgression.push(resultatsProgression[i])
+        }else {
+            NiveauARenforcer.push(resultatsProgression[i])
+        }
+}
+          let niveauapprenants = {solide: NiveauSolide ,
+            enprogression: NiveauEnProgression,
+             arenforcer: NiveauARenforcer
+            }
+            return niveauapprenants
+        }
+
+
 // ************************************10.afficher tableau de bord   undone !!!!****************************
-function afficherTableauDeBord() {
+export function afficherTableauDeBord() {
+    const resultats = calculerProgression(apprenants)
+
+    console.log("=====================Tableau de Bord========================")
+    console.log("Total des Apprenants Est : " + apprenants.length)
+    console.log("------------------------------------------------------------")
+
+    let sommeprogression = 0
+    for (let resultat of resultats){
+        sommeprogression += Number(resultat.progression.replace(" %", ""))
+    }
+    let moyenneprogression = 0
+    if (apprenants.length > 0){
+    moyenneprogression = sommeprogression / apprenants.length}
+
+    console.log("Moyenne de Progression :", moyenneprogression.toFixed(2)+ "%")
+    console.log("------------------------------------------------------------")
+
+    let nombresolide = 0
+    let nombreenprogression = 0
+    let nombrearenforcee = 0
+    for (let resultat of resultats){
+        if (Number(resultat.progression.replace(" %", "")) >= 80){
+            nombresolide ++
+        } else if (Number(resultat.progression.replace(" %", "")) >=50){
+            nombreenprogression ++
+        } else {
+            nombrearenforcee ++
+        }
+    }
+
+    console.log("Profile Solide : " + nombresolide)
+    console.log("Profile en Progression : " + nombreenprogression)
+    console.log("Profile a Renforcer : " + nombrearenforcee)
+    console.log("------------------------------------------------------------")
+
+    let trierniveau = classerParNiveau()
+    console.log("la liste des apprenants par niveau")
+    console.log(trierniveau)
+    console.log("------------------------------------------------------------")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // **********************************11.trier apprenants par ordre alphabetique  done*****************************
 
 export function trierParOrdreAlphabetique(apprenants){

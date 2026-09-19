@@ -15,7 +15,7 @@ while (continuer) {
     console.log("5 - Ajouter ou Modifier le Resultat d'une Journée");         
     console.log("6 - Rechercher un Apprenant par Nom");
     console.log("7 - Filtrer les Apprenants par Niveau");                     
-    console.log("8 - Trier les Apprenants par Progression Décroissante");     !!
+    console.log("8 - Trier les Apprenants par Progression Décroissante");     
     console.log("9 - Trier les Apprenants par Ordre Alphabétique");
     console.log("0 - Quitter");
 
@@ -63,11 +63,13 @@ switch (choix) {
         break;
 
     case "7":
+        // executé
         let niveau = filtrerParNiveau()
         console.log(niveau)
         break;
 
     case "8":
+        // executé
        let trier = trierParProgression()
        console.log(trier)
         break;
