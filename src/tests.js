@@ -8,9 +8,9 @@ const prompt = promptSync();
 // import { enregistrerResultat } from './fonctions.js';
 // console.log(enregistrerResultat )
 
-import {filtrerParNiveau } from './fonctions.js';
+import {trierParProgression } from './fonctions.js';
 import { apprenants } from './data.js';
-console.log (filtrerParNiveau())
+console.log (trierParProgression())
 
 // import { calculerProgression } from './fonctions.js';
 // console.log(calculerProgression(apprenants))

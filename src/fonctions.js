@@ -207,10 +207,19 @@ export function filtrerParNiveau() {
 }
 
 
-// ***********************************9.trier par progression   undone !!!!*******************************
-function trierParProgression() {
-
+// ***********************************9.trier par progression   done *******************************
+export function trierParProgression() {
+    const trierprogression = calculerProgression(apprenants)
+    trierprogression.sort(function(a, b){
+        const progressionA = Number(a.progression.replace(" %", ""))
+        const progressionB = Number(b.progression.replace(" %", ""))
+        return progressionB - progressionA
+ 
+      })
+      return trierprogression
 }
+
+
 // ************************************10.afficher tableau de bord   undone !!!!****************************
 function afficherTableauDeBord() {
 

@@ -1,7 +1,7 @@
 import promptSync from 'prompt-sync';
 import { apprenants } from './data.js';
 import {normaliserNom, ajouterApprenant,validerResultat, rechercherApprenantParid, rechercherApprenantParnom,
-     trierParOrdreAlphabetique, enregistrerResultat, filtrerParNiveau} from './fonctions.js'
+     trierParOrdreAlphabetique, enregistrerResultat, filtrerParNiveau, trierParProgression} from './fonctions.js'
 
 const prompt = promptSync({ sigint: true });
 let continuer = true;
@@ -68,7 +68,8 @@ switch (choix) {
         break;
 
     case "8":
-       
+       let trier = trierParProgression()
+       console.log(trier)
         break;
 
     case "9":
