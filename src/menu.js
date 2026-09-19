@@ -1,7 +1,7 @@
 import promptSync from 'prompt-sync';
 import { apprenants } from './data.js';
 import {normaliserNom, ajouterApprenant,validerResultat, rechercherApprenantParid, rechercherApprenantParnom,
-     trierParOrdreAlphabetique, enregistrerResultat, filtrerParNiveau, trierParProgression} from './fonctions.js'
+     trierParOrdreAlphabetique, enregistrerResultat, filtrerParNiveau, trierParProgression, afficherTableauDeBord} from './fonctions.js'
 
 const prompt = promptSync({ sigint: true });
 let continuer = true;
@@ -24,7 +24,8 @@ while (continuer) {
 switch (choix) {
 
     case "1":
-       
+        // executé
+        afficherTableauDeBord()
         break;
 
     case "2":

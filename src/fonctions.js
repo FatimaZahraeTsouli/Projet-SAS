@@ -219,32 +219,7 @@ export function trierParProgression() {
       return trierprogression
 }
 
-
-// ******************************8.classer par niveau  done  **************************************
-export function classerParNiveau() {
-     const NiveauSolide=[]
-    const NiveauEnProgression=[]
-    const NiveauARenforcer=[]
-    const resultatsProgression = calculerProgression(apprenants)
-    for (let i=0; i<apprenants.length; i++){
-        const progression = Number(resultatsProgression[i].progression.replace(" %", ""))
-        if( progression >= 80 ){
-            NiveauSolide.push(resultatsProgression[i])
-        } else if (progression >= 50 && progression < 80){
-            NiveauEnProgression.push(resultatsProgression[i])
-        }else {
-            NiveauARenforcer.push(resultatsProgression[i])
-        }
-}
-          let niveauapprenants = {solide: NiveauSolide ,
-            enprogression: NiveauEnProgression,
-             arenforcer: NiveauARenforcer
-            }
-            return niveauapprenants
-        }
-
-
-// ************************************10.afficher tableau de bord   undone !!!!****************************
+// ************************************10.afficher tableau de bord   done ****************************
 export function afficherTableauDeBord() {
     const resultats = calculerProgression(apprenants)
 
@@ -281,57 +256,13 @@ export function afficherTableauDeBord() {
     console.log("Profile a Renforcer : " + nombrearenforcee)
     console.log("------------------------------------------------------------")
 
-    let trierniveau = classerParNiveau()
-    console.log("la liste des apprenants par niveau")
-    console.log(trierniveau)
+    let trierniveau = trierParProgression()
+    console.log("La Liste des Apprenants par Progression")
+    for (let apprenant of trierniveau){
+        console.log(apprenant.nomComplet + " : " + apprenant.progression)
+    }
     console.log("------------------------------------------------------------")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // **********************************11.trier apprenants par ordre alphabetique  done*****************************
 
