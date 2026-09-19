@@ -5,7 +5,7 @@ import {normaliserNom, ajouterApprenant,validerResultat, rechercherApprenantPari
 
 const prompt = promptSync({ sigint: true });
 let continuer = true;
-// PS C:\Users\pc\Documents\Projet-SAS\src> node menu.js  pour executé
+
 while (continuer) {
     console.log("\n--- SAS PROGRESS CONSOLE ---");
     console.log("\n1 - Afficher le Tableau de Bord");                         !!!

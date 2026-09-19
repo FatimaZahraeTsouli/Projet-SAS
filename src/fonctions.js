@@ -10,7 +10,7 @@ export function normaliserNom() {
     let nom1 = nom.trim().toLowerCase()
     return `votre Nom est : ${nom1}`
 }
-// normaliserNom()
+
 
 
 // *******************************2.Fonction validerResultat: done*******************************
@@ -37,7 +37,7 @@ export function validerResultat() {
     }
     return resultats
 }
-// console.log(validerResultat())
+
 
 
 
@@ -67,8 +67,7 @@ export function ajouterApprenant() {
     }
     apprenants.push(nouveauApprenant)
 }
-// (ajouterApprenant())
-// console.log({apprenants})
+
 
 
 
@@ -89,9 +88,7 @@ export function enregistrerResultat(apprenant) {
     }
     console.log("Veuillez Réessayer S'Il Vous Plait ! ")
 }
-// const nouveauApprenant = apprenants[0];
-// enregistrerResultat(nouveauApprenant)
-// console.log(nouveauApprenants.resultats)
+
 
 
 
@@ -109,8 +106,7 @@ export function rechercherApprenantParid() {
     }
     return ("Apprenant n'Existe Pas, Veuillez Ajouter Vous Information d'abord")
 }
-// const apprenantRecherche = rechercherApprenantParid();
-// apprenantRecherche;
+
 
 
 // ***************************6.rechercher apprenant par nom : done***********************************
@@ -126,8 +122,7 @@ export function rechercherApprenantParnom() {
     }
     return ("Apprenant n'Existe Pas, Veuillez Ajouter Vous Information d'abord")
 }
-// const apprenantRechercher = rechercherApprenantParnom();
-// apprenantRechercher;
+
 
 // *****************************7.calculer progression   done ************************************
 
@@ -166,7 +161,7 @@ export function calculerProgression(apprenants) {
 
     return resultatsProgression
 }
-// calculerProgression(apprenants);
+
 
 
 
