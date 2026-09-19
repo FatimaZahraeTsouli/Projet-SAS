@@ -8,5 +8,6 @@ const prompt = promptSync();
 // import { enregistrerResultat } from './fonctions.js';
 // console.log(enregistrerResultat )
 
-// import {calculerProgression } from './fonctions.js';
-// console.log (calculerProgression)
+import {calculerProgression } from './fonctions.js';
+import { apprenants } from './data.js';
+console.log (calculerProgression(apprenants))

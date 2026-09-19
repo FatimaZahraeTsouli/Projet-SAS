@@ -6,9 +6,9 @@ import { apprenants } from './data.js'
 //  *****************************1.fonction normalisernom: done**********************************
 
 export function normaliserNom() {
-    let nom = prompt("entrez un nom : ")
+    let nom = prompt("Entrez Votre Nom : ")
     let nom1 = nom.trim().toLowerCase()
-    return `votre nom est : ${nom1}`
+    return `votre Nom est : ${nom1}`
 }
 // normaliserNom()
 
@@ -18,9 +18,9 @@ export function normaliserNom() {
 export function validerResultat() {
     let resultats = {
         jour: parseInt(prompt("entrez jour : "), 10),
-        exercicesTermines: parseInt(prompt("entrez nombre d'exercices terminées :"), 10),
-        totalExercices: parseInt(prompt("entrez total d'exercices : "), 10),
-        challengeTermine: prompt("avez vous terminer votre challenge? (oui/non) :")
+        exercicesTermines: parseInt(prompt("Entrez Nombre d'Exercices Terminées :"), 10),
+        totalExercices: parseInt(prompt("Entrez Total d'Exercices : "), 10),
+        challengeTermine: prompt("Avez Vous Terminer Votre Challenge? (OUI/NON) :")
     }
     let challenge = resultats.challengeTermine.toLowerCase()
     if (resultats.jour < 1 && resultats.jour > 7) {
@@ -57,8 +57,8 @@ export function ajouterApprenant() {
         }
         nextid = maxid + 1
     }
-    const nomComplet = prompt("entrez votre nom Complet : ")
-    const ville = prompt("entrez votre ville: ")
+    const nomComplet = prompt("Entrez Votre Nom Complet : ")
+    const ville = prompt("Entrez Votre Ville: ")
     const nouveauApprenant = {
         id: nextid,
         nomComplet: nomComplet,
@@ -87,7 +87,7 @@ export function enregistrerResultat(apprenant) {
         }
         return apprenant
     }
-    console.log("veuillez réessayer s'il vous plait ! ")
+    console.log("Veuillez Réessayer S'Il Vous Plait ! ")
 }
 // const nouveauApprenant = apprenants[0];
 // enregistrerResultat(nouveauApprenant)
@@ -107,7 +107,7 @@ export function rechercherApprenantParid() {
             return apprenants[i]
         }
     }
-    return ("apprenant n'existe pas, veuillez ajouter vous information d'abord")
+    return ("Apprenant n'Existe Pas, Veuillez Ajouter Vous Information d'abord")
 }
 // const apprenantRecherche = rechercherApprenantParid();
 // apprenantRecherche;
@@ -118,18 +118,18 @@ export function rechercherApprenantParid() {
 
 
 export function rechercherApprenantParnom() {
-    const nom = prompt("entrez votre nom: ")
+    const nom = prompt("Entrez Votre Nom: ")
     for (let i = 0; i < apprenants.length; i++) {
         if (nom.toLowerCase() == apprenants[i].nomComplet.toLowerCase()) {
             return apprenants[i]
         }
     }
-    return ("apprenant n'existe pas, veuillez ajouter vous information d'abord")
+    return ("Apprenant n'Existe Pas, Veuillez Ajouter Vous Information d'abord")
 }
 // const apprenantRechercher = rechercherApprenantParnom();
 // apprenantRechercher;
 
-// *****************************7.calculer progression   undone  !!!!************************************
+// *****************************7.calculer progression   done  !!!!************************************
 
 
 
@@ -164,9 +164,9 @@ export function calculerProgression(apprenants) {
         })
     }
 
-    return calculerProgression
+    return resultatsProgression
 }
-// console.log(calculerProgression(apprenants));
+calculerProgression(apprenants);
 
 
 

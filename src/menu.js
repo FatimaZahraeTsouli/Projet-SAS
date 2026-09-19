@@ -4,21 +4,21 @@ import {normaliserNom , ajouterApprenant,validerResultat, rechercherApprenantPar
 
 const prompt = promptSync({ sigint: true });
 let continuer = true;
-
+// PS C:\Users\pc\Documents\Projet-SAS\src> node menu.js  pour executé
 while (continuer) {
     console.log("\n--- SAS PROGRESS CONSOLE ---");
-    console.log("\n1. Afficher le tableau de bord");                         !!!
-    console.log("2. Afficher la liste des apprenants");
-    console.log("3. Ajouter un apprenant");
-    console.log("4. Consulter un apprenant par identifiant");
-    console.log("5. Ajouter ou modifier le resultat d'une journée");         
-    console.log("6. Rechercher un apprenant par nom");
-    console.log("7. Filtrer les apprenants par niveau");                     !!
-    console.log("8. Trier les apprenants par progression décroissante");     !!
-    console.log("9. Trier les apprenants par ordre alphabétique");
-    console.log("0. Quitter");
+    console.log("\n1 - Afficher le Tableau de Bord");                         !!!
+    console.log("2 - Afficher la Liste des Apprenants");
+    console.log("3 - Ajouter un Apprenant");
+    console.log("4 - Consulter un Apprenant par Identifiant");
+    console.log("5 - Ajouter ou Modifier le Resultat d'une Journée");         
+    console.log("6 - Rechercher un Apprenant par Nom");
+    console.log("7 - Filtrer les Apprenants par Niveau");                     !!
+    console.log("8 - Trier les Apprenants par Progression Décroissante");     !!
+    console.log("9 - Trier les Apprenants par Ordre Alphabétique");
+    console.log("0 - Quitter");
 
-    const choix = prompt("Entrez votre choix (0-9) : ");
+    const choix = prompt("Entrez Votre Choix (0-9) : ");
 
 switch (choix) {
 
