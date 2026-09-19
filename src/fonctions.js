@@ -129,7 +129,7 @@ export function rechercherApprenantParnom() {
 // const apprenantRechercher = rechercherApprenantParnom();
 // apprenantRechercher;
 
-// *****************************7.calculer progression   done  !!!!************************************
+// *****************************7.calculer progression   done ************************************
 
 
 
@@ -151,7 +151,7 @@ export function calculerProgression(apprenants) {
         }
 
         if (exercicesProposes > 0) {
-            progression = (exercicesTermines / exercicesProposes) * 100
+            progression = (exercicesTermines / exercicesProposes) * 100 + " %"
         }
         resultatsProgression.push({
             id: apprenants[i].id,
@@ -159,21 +159,54 @@ export function calculerProgression(apprenants) {
             exercicesTermines: exercicesTermines,
             exercicesProposes: exercicesProposes,
             challengeTermines: challengeTermines,
-            progression: progression,
+            progression: progression ,
             journéerenseignees: journéerenseignees
         })
     }
 
     return resultatsProgression
 }
-calculerProgression(apprenants);
+// calculerProgression(apprenants);
 
 
 
-// ******************************8.filtrer par niveau  undone  !!!!**************************************
-function filtrerParNiveau() {
+// ******************************8.filtrer par niveau  done  **************************************
+// lister les apprenants par rapport a leur niveau (solide, en progression, a renforcer)
 
+export function filtrerParNiveau() {
+     const NiveauSolide=[]
+    const NiveauEnProgression=[]
+    const NiveauARenforcer=[]
+    const resultatsProgression = calculerProgression(apprenants)
+    for (let i=0; i<apprenants.length; i++){
+        const progression = Number(resultatsProgression[i].progression.replace(" %", ""))
+        if( progression >= 80 ){
+            NiveauSolide.push(resultatsProgression[i])
+        } else if (progression >= 50 && progression < 80){
+            NiveauEnProgression.push(resultatsProgression[i])
+        }else {
+            NiveauARenforcer.push(resultatsProgression[i])
+        }
 }
+// appeler les apprenants a partir de leur niveau 
+          let niveauapprenants = {solide: NiveauSolide ,
+            enprogression: NiveauEnProgression,
+             arenforcer: NiveauARenforcer
+            }
+            // return niveauapprenants
+    let niveau = prompt("entrez niveau :  ")
+    if (niveau === "solide"){
+        return niveauapprenants.solide
+    } else if (niveau === "enprogression"){
+        return niveauapprenants.enprogression
+    } else if (niveau === "arenforcer"){
+        return niveauapprenants.arenforcer
+    } else { 
+        return ("choix n'existe pas")
+    }
+}
+
+
 // ***********************************9.trier par progression   undone !!!!*******************************
 function trierParProgression() {
 

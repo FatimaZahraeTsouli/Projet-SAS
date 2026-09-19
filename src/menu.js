@@ -1,6 +1,7 @@
 import promptSync from 'prompt-sync';
 import { apprenants } from './data.js';
-import {normaliserNom , ajouterApprenant,validerResultat, rechercherApprenantParid, rechercherApprenantParnom, trierParOrdreAlphabetique, enregistrerResultat} from './fonctions.js'
+import {normaliserNom, ajouterApprenant,validerResultat, rechercherApprenantParid, rechercherApprenantParnom,
+     trierParOrdreAlphabetique, enregistrerResultat, filtrerParNiveau} from './fonctions.js'
 
 const prompt = promptSync({ sigint: true });
 let continuer = true;
@@ -13,7 +14,7 @@ while (continuer) {
     console.log("4 - Consulter un Apprenant par Identifiant");
     console.log("5 - Ajouter ou Modifier le Resultat d'une Journée");         
     console.log("6 - Rechercher un Apprenant par Nom");
-    console.log("7 - Filtrer les Apprenants par Niveau");                     !!
+    console.log("7 - Filtrer les Apprenants par Niveau");                     
     console.log("8 - Trier les Apprenants par Progression Décroissante");     !!
     console.log("9 - Trier les Apprenants par Ordre Alphabétique");
     console.log("0 - Quitter");
@@ -62,7 +63,8 @@ switch (choix) {
         break;
 
     case "7":
-        
+        let niveau = filtrerParNiveau()
+        console.log(niveau)
         break;
 
     case "8":
