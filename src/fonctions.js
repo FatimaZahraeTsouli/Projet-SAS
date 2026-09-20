@@ -3,14 +3,13 @@ const prompt = promptSync();
 import { apprenants } from './data.js'
 
 
-//  *****************************1.fonction normalisernom: done**********************************
+//  *****************************1.fonction normalisernom: done    **********************************
 
 export function normaliserNom() {
     let nom = prompt("Entrez Votre Nom : ")
     let nom1 = nom.trim().toLowerCase()
     return nom1
 }
-
 
 
 // *******************************2.Fonction validerResultat: done*******************************
@@ -93,7 +92,7 @@ export function enregistrerResultat(apprenant) {
 
 
 
-// ***********************************5.rechercher apprenant par id : done**************************************
+// ***********************************5.rechercher apprenant par id : done      **************************************
 
 
 
@@ -104,12 +103,11 @@ export function rechercherApprenantParid() {
             return apprenants[i]
         }
     }
-    return ("Apprenant n'Existe Pas, Veuillez Ajouter Vous Information d'abord")
+    return ("Apprenant n'Existe Pas, Veuillez Ajouter Vos Information d'abord")
 }
 
 
-
-// ***************************6.rechercher apprenant par nom : done***********************************
+// ***************************6.rechercher apprenant par nom : done           ***********************************
 
 
 
@@ -124,7 +122,8 @@ export function rechercherApprenantParnom() {
 }
 
 
-// *****************************7.calculer progression   done ************************************
+
+// *****************************7.calculer progression   done************************************
 
 
 
@@ -165,7 +164,7 @@ export function calculerProgression(apprenants) {
 
 
 
-// ******************************8.filtrer par niveau  done  **************************************
+// ******************************8.filtrer par niveau  done**************************************
 // lister les apprenants par rapport a leur niveau (solide, en progression, a renforcer)
 
 export function filtrerParNiveau() {
@@ -203,7 +202,7 @@ export function filtrerParNiveau() {
 }
 
 
-// ***********************************9.trier par progression   done *******************************
+// ***********************************9.trier par progression   done       *******************************
 export function trierParProgression() {
     const trierprogression = calculerProgression(apprenants)
     trierprogression.sort(function (a, b) {
@@ -215,9 +214,7 @@ export function trierParProgression() {
     return trierprogression
 }
 
-
-
-// **********************************10.trier apprenants par ordre alphabetique  done*****************************
+// **********************************10.trier apprenants par ordre alphabetique  done         *****************************
 
 export function trierParOrdreAlphabetique(apprenants) {
     let ordre = [...apprenants]
@@ -226,7 +223,6 @@ export function trierParOrdreAlphabetique(apprenants) {
     })
     return ordre
 }
-
 
 
 // ************************************11.afficher tableau de bord   done ****************************
@@ -246,7 +242,7 @@ export function afficherTableauDeBord() {
         moyenneprogression = sommeprogression / apprenants.length
     }
 
-    console.log("Moyenne de Progression :"+ moyenneprogression.toFixed(2) + "%")
+    console.log("Moyenne de Progression :" + moyenneprogression.toFixed(2) + "%")
     console.log("------------------------------------------------------------")
 
     let nombresolide = 0

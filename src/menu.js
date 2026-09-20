@@ -7,7 +7,7 @@ const prompt = promptSync({ sigint: true });
 let continuer = true;
 
 while (continuer) {
-    console.log("\n--- SAS PROGRESS CONSOLE ---");
+    console.log("\n--- SAS PROGRESS CONSOLE ---"); 
     console.log("\n1 - Afficher le Tableau de Bord");                         
     console.log("2 - Afficher la Liste des Apprenants");
     console.log("3 - Ajouter un Apprenant");
