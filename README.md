@@ -1,5 +1,5 @@
                                            PROJET SAS - APPRENANTS
-Ce projet était réaliser à la fin du periode SAS par Tsouli Fatima Zahrae comme prouve pour affirmer le niveau de progression pendant la période SAS a Youcode Nador, le but de ce projet est de créer un code qui se exécute en terminal, pour présenter des options qui permet d'exposer le niveau et les characterestique des apprenants.
+Ce projet était réaliser à la fin du periode SAS par Tsouli Fatima Zahrae comme prouve pour affirmer le niveau de progression pendant la période SAS a Youcode Nador, le but de ce projet est de créer un code qui se exécute en terminal, pour présenter des options qui permet de présenter le niveau et les characterestique des apprenants.
 Ce projet présente dix options fonctionnels qui permet de consulter la listes des apprenants, leur charactérestique, leur niveaux, leur progressions, leur résultats, ainsi que ajouter des nouveaux apprenants, et leur resultats.
       LES FONCTINNALITES : 
       1. Ajouter un nouveau apprenant: 
@@ -7,13 +7,13 @@ Ce projet présente dix options fonctionnels qui permet de consulter la listes d
       2. Ajouter un resultat:
    cette fonctionalité permet de ajouter un resultat à un apprenant déja existant, par déclaré un nouveau jour, les exercices tarminés, les éxercises renseignées, et le challenge.
       3. Modifier un resultat:
-   cette fonctionalité permet de modifier un resultat à un apprenant déja existant, par déclaré un jour déja existant, les exercices tarminés, les éxercises renseignées, et le challenge.
+   cette fonctionalité permet de modifier un resultat d'un apprenant déja existant, par déclaré un jour déja existant, les exercices tarminées, les éxercises renseignées, et le challenge.
       4. Valider un resultat:
-   assurez que les resultats ajoutée sont valide avant les enregistrer.
+   assurez que les resultats ajoutées sont valide avant les enregistrées.
       5. Calculer la Progression:
-   la progression est calculé selon le nombres d'éxercices terminées par rapport aux nombre d'éxercices proposées
+   la progression est calculée selon le nombres d'éxercices terminées par rapport aux nombre d'éxercices proposées
       6. Tableau de bord:
-   un tableau qui affiche la moyenne de progression, le nombre de profile solide, profile en progresse, et profile a renforcer, ainsi que la liste des apprenants par ordre de progression.
+   un tableau qui affiche la moyenne de progression, le nombre de profile solide, profile en progression, et profile a renforcer, ainsi que la liste des apprenants par ordre de progression.
      TECHNOLOGIES UTILISEES:
      * JAVASCRIPT
      * NODE.JS

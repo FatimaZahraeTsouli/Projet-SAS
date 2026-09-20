@@ -8,7 +8,7 @@ import { apprenants } from './data.js'
 export function normaliserNom() {
     let nom = prompt("Entrez Votre Nom : ")
     let nom1 = nom.trim().toLowerCase()
-    return `votre Nom est : ${nom1}`
+    return nom1
 }
 
 
@@ -114,9 +114,9 @@ export function rechercherApprenantParid() {
 
 
 export function rechercherApprenantParnom() {
-    const nom = prompt("Entrez Votre Nom: ")
+    const nom = normaliserNom()
     for (let i = 0; i < apprenants.length; i++) {
-        if (nom.toLowerCase() == apprenants[i].nomComplet.toLowerCase()) {
+        if (nom == apprenants[i].nomComplet.toLowerCase()) {
             return apprenants[i]
         }
     }
@@ -134,7 +134,7 @@ export function calculerProgression(apprenants) {
         let exercicesTermines = 0
         let exercicesProposes = 0
         let challengeTermines = 0
-        let progression = 0
+        let progression = "0 %"
         let journéerenseignees = apprenants[i].resultats.length
 
         for (let resultat of apprenants[i].resultats) {
@@ -154,7 +154,7 @@ export function calculerProgression(apprenants) {
             exercicesTermines: exercicesTermines,
             exercicesProposes: exercicesProposes,
             challengeTermines: challengeTermines,
-            progression: progression ,
+            progression: progression,
             journéerenseignees: journéerenseignees
         })
     }
@@ -169,34 +169,35 @@ export function calculerProgression(apprenants) {
 // lister les apprenants par rapport a leur niveau (solide, en progression, a renforcer)
 
 export function filtrerParNiveau() {
-     const NiveauSolide=[]
-    const NiveauEnProgression=[]
-    const NiveauARenforcer=[]
+    const NiveauSolide = []
+    const NiveauEnProgression = []
+    const NiveauARenforcer = []
     const resultatsProgression = calculerProgression(apprenants)
-    for (let i=0; i<apprenants.length; i++){
+    for (let i = 0; i < apprenants.length; i++) {
         const progression = Number(resultatsProgression[i].progression.replace(" %", ""))
-        if( progression >= 80 ){
+        if (progression >= 80) {
             NiveauSolide.push(resultatsProgression[i])
-        } else if (progression >= 50 && progression < 80){
+        } else if (progression >= 50 && progression < 80) {
             NiveauEnProgression.push(resultatsProgression[i])
-        }else {
+        } else {
             NiveauARenforcer.push(resultatsProgression[i])
         }
-}
-// appeler les apprenants a partir de leur niveau 
-          let niveauapprenants = {solide: NiveauSolide ,
-            enprogression: NiveauEnProgression,
-             arenforcer: NiveauARenforcer
-            }
-            // return niveauapprenants
+    }
+    // appeler les apprenants a partir de leur niveau 
+    let niveauapprenants = {
+        solide: NiveauSolide,
+        enprogression: NiveauEnProgression,
+        arenforcer: NiveauARenforcer
+    }
+    // return niveauapprenants
     let niveau = prompt("entrez niveau :  ")
-    if (niveau === "solide"){
+    if (niveau === "solide") {
         return niveauapprenants.solide
-    } else if (niveau === "enprogression"){
+    } else if (niveau === "enprogression") {
         return niveauapprenants.enprogression
-    } else if (niveau === "arenforcer"){
+    } else if (niveau === "arenforcer") {
         return niveauapprenants.arenforcer
-    } else { 
+    } else {
         return ("choix n'existe pas")
     }
 }
@@ -205,16 +206,30 @@ export function filtrerParNiveau() {
 // ***********************************9.trier par progression   done *******************************
 export function trierParProgression() {
     const trierprogression = calculerProgression(apprenants)
-    trierprogression.sort(function(a, b){
+    trierprogression.sort(function (a, b) {
         const progressionA = Number(a.progression.replace(" %", ""))
         const progressionB = Number(b.progression.replace(" %", ""))
         return progressionB - progressionA
- 
-      })
-      return trierprogression
+
+    })
+    return trierprogression
 }
 
-// ************************************10.afficher tableau de bord   done ****************************
+
+
+// **********************************10.trier apprenants par ordre alphabetique  done*****************************
+
+export function trierParOrdreAlphabetique(apprenants) {
+    let ordre = [...apprenants]
+    ordre.sort(function (a, b) {
+        return a.nomComplet.localeCompare(b.nomComplet)
+    })
+    return ordre
+}
+
+
+
+// ************************************11.afficher tableau de bord   done ****************************
 export function afficherTableauDeBord() {
     const resultats = calculerProgression(apprenants)
 
@@ -223,26 +238,27 @@ export function afficherTableauDeBord() {
     console.log("------------------------------------------------------------")
 
     let sommeprogression = 0
-    for (let resultat of resultats){
+    for (let resultat of resultats) {
         sommeprogression += Number(resultat.progression.replace(" %", ""))
     }
     let moyenneprogression = 0
-    if (apprenants.length > 0){
-    moyenneprogression = sommeprogression / apprenants.length}
+    if (apprenants.length > 0) {
+        moyenneprogression = sommeprogression / apprenants.length
+    }
 
-    console.log("Moyenne de Progression :", moyenneprogression.toFixed(2)+ "%")
+    console.log("Moyenne de Progression :"+ moyenneprogression.toFixed(2) + "%")
     console.log("------------------------------------------------------------")
 
     let nombresolide = 0
     let nombreenprogression = 0
     let nombrearenforcee = 0
-    for (let resultat of resultats){
-        if (Number(resultat.progression.replace(" %", "")) >= 80){
-            nombresolide ++
-        } else if (Number(resultat.progression.replace(" %", "")) >=50){
-            nombreenprogression ++
+    for (let resultat of resultats) {
+        if (Number(resultat.progression.replace(" %", "")) >= 80) {
+            nombresolide++
+        } else if (Number(resultat.progression.replace(" %", "")) >= 50) {
+            nombreenprogression++
         } else {
-            nombrearenforcee ++
+            nombrearenforcee++
         }
     }
 
@@ -253,18 +269,8 @@ export function afficherTableauDeBord() {
 
     let trierniveau = trierParProgression()
     console.log("La Liste des Apprenants par Progression")
-    for (let apprenant of trierniveau){
+    for (let apprenant of trierniveau) {
         console.log(apprenant.nomComplet + " : " + apprenant.progression)
     }
     console.log("------------------------------------------------------------")
-}
-
-// **********************************11.trier apprenants par ordre alphabetique  done*****************************
-
-export function trierParOrdreAlphabetique(apprenants){
-      let ordre = [...apprenants]
-      ordre.sort(function(a, b){
-        return a.nomComplet.localeCompare(b.nomComplet)
-      })
-      return ordre
 }

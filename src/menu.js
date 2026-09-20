@@ -8,7 +8,7 @@ let continuer = true;
 
 while (continuer) {
     console.log("\n--- SAS PROGRESS CONSOLE ---");
-    console.log("\n1 - Afficher le Tableau de Bord");                         !!!
+    console.log("\n1 - Afficher le Tableau de Bord");                         
     console.log("2 - Afficher la Liste des Apprenants");
     console.log("3 - Ajouter un Apprenant");
     console.log("4 - Consulter un Apprenant par Identifiant");
